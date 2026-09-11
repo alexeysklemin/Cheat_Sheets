@@ -1,0 +1,18 @@
+1. sudo apt-get install samba
+2. smb.conf
+....
+
+[Shared Folders]
+	comment = Shared folder
+	inherit acls = yes
+	path = /home/alex/Data
+	read list = alex
+	write list = alex
+	valid users = alex
+	write list = alex
+....
+3. sudo smbpasswd - alex
+New SMB password:
+Retype new SMB password:
+Added user alex
+4. sudo service smbd start
